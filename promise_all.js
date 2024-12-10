@@ -25,23 +25,3 @@
 //   });
 
 // Practical example of using promise.all when fetching data from multiple sources
-
-async function fetchData(url) {
-    const response = await fetch(url);
-    return response.json();
-}
-
-const urls = ['https://jsonplaceholder.typicode.com/users', 
-  'https://jsonplaceholder.typicode.com/posts', 
-  'https://jsonplaceholder.typicode.com/comments'];
-
-async function fetchAllData() {
-    try {
-        const data = await Promise.all(urls.map(url => fetchData(url)));
-        console.log(data);
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-fetchAllData();

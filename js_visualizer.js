@@ -1,4 +1,4 @@
-// Exempel för Call Stack https://www.jsv9000.app/
+// // Exempel för Call Stack https://www.jsv9000.app/
 
 // function multiply(a, b) {
 //     return a * b;
@@ -81,20 +81,20 @@
 
 
 
+//Asyncronous code
+[1, 2, 3, 4].forEach(function(item) {
+    console.log(item);
+});
+
 // Asyncronous code
-// [1, 2, 3, 4].forEach(function(item) {
-//     console.log(item);
-// });
+function asyncForEach(array, callback) {
+    array.forEach(function(item) {
+        setTimeout(function() {
+            callback(item);
+        }, 0);
+    });
+}
 
-// // Asyncronous code
-// function asyncForEach(array, callback) {
-//     array.forEach(function(item) {
-//         setTimeout(function() {
-//             callback(item);
-//         }, 0);
-//     });
-// }
-
-// asyncForEach([1, 2, 3, 4], function(item) {
-//     console.log(item);
-// });
+asyncForEach([1, 2, 3, 4], function(item) {
+    console.log(item);
+});
